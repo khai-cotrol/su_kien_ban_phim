@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự kiện bàn phím </title>
+</head>
+<body onload="docready()">
+<img id="doraemon" style="position:absolute;left: 0;top: 0;" src="doraemon.png" height="200" width="208"/>
+<script>
+    function uparrowpressed(){
+        let element = document.getElementById("doraemon");
+        element.style.top = parseInt(element.style.top) -5 +'px';
+    }
+    function downarrowpressed(){
+        let element = document.getElementById("doraemon");
+        element.style.top = parseInt(element.style.top) + 5 +'px';
+    }
+    function leftarrowpressed(){
+        let element = document.getElementById("doraemon");
+        element.style.left = parseInt(element.style.left) -5 +'px';
+    }
+    function rightuparrowpressed(){
+        let element = document.getElementById("doraemon");
+        element.style.left = parseInt(element.style.left) + 5 +'px';
+    }
+    function moveselevtion(evt){
+        switch (evt.keyCode){
+            case 37:
+                leftarrowpressed();
+                break;
+            case 39:
+                rightuparrowpressed();
+                break;
+            case 38:
+                uparrowpressed();
+                break;
+            case 40:
+                downarrowpressed();
+                break;
+        }
+    }
+    function docready(){
+        window.addEventListener('keydown',moveselevtion);
+    }
+
+</script>
+</body>
+</html>
